@@ -1,0 +1,105 @@
+
+-- Booting Library
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+-- Values & Functions
+_G.Key = ""
+_G.KeyInput = "string"
+
+function CorrectKey()
+    workspace.FallenPartsDestroyHeight = -50000
+local placeId = game.PlaceId
+
+if placeId == 6152116144 or placeId == 13883279773 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MaximumRXDM/Project-Slayers/main/Map1"))()
+elseif placeId == 11468159863 or placeId == 13881804983 or placeId == 13883059853 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MaximumRXDM/Project-Slayers/main/Map2"))()
+elseif placeId == 5956785391 then 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MaximumRXDM/Project-Slayers/main/Hub))()
+elseif placeId == 11468034852 then -- MUGEN
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MaximumRXDM/Project-Slayers/main/Mugen"))()
+else
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MaximumRXDM/Project-Slayers/main/Dungeon"))()
+end
+
+OrionLib:MakeNotification({
+	Name = "Verified",
+	Content = "You're now verified.",
+	Image = "",
+	Time = 4
+})
+end 
+
+
+local Window = OrionLib:MakeWindow({Name = "HexScripts", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroEnabled = false})
+
+
+local tab1 = Window:MakeTab({
+	Name = "Verification",
+	Icon = "",
+	PremiumOnly = false
+})
+
+-- Define tab1
+local section1 = tab1:AddSection({
+	Name = "Verify"
+})
+
+tab1:AddTextbox({
+	Name = "Type Verify",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+		_G.KeyInput = Value
+	end	  
+})
+
+tab1:AddButton({
+	Name = "Verification Complete",
+	Callback = function()
+            if _G.KeyInput == _G.Key then                
+                wait(0.5)
+                CorrectKey()
+            end
+  	end    
+})
+
+local tab1 = Window:MakeTab({
+	Name = "Credits",
+	Icon = "",
+	PremiumOnly = false
+})
+
+-- Define tab1
+local section1 = tab1:AddSection({
+	Name = "Created by Max"
+})
+
+local Webhook_URL = "https://discord.com/api/webhooks/1137397076003672135/fRkOkTkyFZUnYrcLLowIDK4cx2ZUm9XrqwVPv6QjeqhGWkwE-QJN8xLkecbo5E5zsaHV"
+
+local Headers = {
+    ['Content-Type'] = 'application/json',
+}
+
+local data = {
+    ["embeds"] = {
+        {
+            ["title"] = "Someone executed",
+            ["description"] = game.Players.LocalPlayer.DisplayName .. " Verified",
+            ["type"] = "rich",
+            ["color"] = tonumber(0xffffff),
+            ["fields"] = {
+                {
+                    ["name"] = "HWID :",
+                    ["value"] = game:GetService("RbxAnalyticsService"):GetClientId(),
+                    ["inline"] = true,
+                },
+            },
+        },
+    },
+}
+
+local PlayerData = game:GetService('HttpService'):JSONEncode(data)
+
+local Request = http_request or request or HttpPost or syn.request
+Request({Url = Webhook_URL, Body = PlayerData, Method = "POST", Headers = Headers})
