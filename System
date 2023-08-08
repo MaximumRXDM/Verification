@@ -1,0 +1,22 @@
+local Key = "Verified"
+local Hwid = game:GetService("RbxAnalyticsService"):GetClientId()
+--// players \\--
+local p1 = "" -- hwid
+local p2 = "" -- hwid
+local p3 = "" -- hwid
+
+function yourscript()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/MaximumRXDM/Users/main/Test'))()
+end
+--// keys \\--
+if p1 == Hwid and Key == "Verified" then
+    yourscript()
+elseif
+ p2 == Hwid and Key == "Verified" then
+    yourscript()
+elseif
+ p3 == Hwid and Key == "Verified" then
+    yourscript()
+else
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/HubHexScripts/ProjectSlayers/ba7f561b0c4ce876fc81a8900b86afba3bfa0325/Unverified'))()
+ end
