@@ -24,7 +24,7 @@ end
 
 OrionLib:MakeNotification({
 	Name = "Verified",
-	Content = "You're now verified.",
+	Content = "You're now Verified.",
 	Image = "",
 	Time = 4
 })
