@@ -3,7 +3,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 -- Values & Functions
-_G.Key = ""
+_G.Key = "Verify"
 _G.KeyInput = "string"
 
 function CorrectKey()
