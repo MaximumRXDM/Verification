@@ -6,7 +6,7 @@ local p2 = "" -- hwid
 local p3 = "" -- hwid
 
 function yourscript()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/MaximumRXDM/Users/main/Test'))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/MaximumRXDM/Verification/main/MainScript'))()
 end
 --// keys \\--
 if p1 == Hwid and Key == "Verified" then
