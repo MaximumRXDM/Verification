@@ -4,6 +4,7 @@ local Hwid = game:GetService("RbxAnalyticsService"):GetClientId()
 local p1 = "C476C561-B1D7-4380-99AC-DBF273744570" -- hwid
 local p2 = "4D6550CE-0088-4D2B-AA72-1F0579A4ED7C" -- hwid
 local p3 = "3F707124-5376-4254-B932-2FFA0703D3D2" -- hwid
+local p4 = "CA49257F-383B-4900-ACB4-D26197B43F55" -- hwid
 
 function yourscript()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/MaximumRXDM/Verification/main/MainScript'))()
@@ -16,6 +17,9 @@ elseif
     yourscript()
 elseif
  p3 == Hwid and Key == "Verified" then
+    yourscript()
+elseif
+  p3 == Hwid and Key == "Verified" then
     yourscript()
 else
  loadstring(game:HttpGet('https://raw.githubusercontent.com/HubHexScripts/ProjectSlayers/main/Unverified'))()
