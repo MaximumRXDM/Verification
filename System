@@ -19,7 +19,7 @@ elseif
  p3 == Hwid and Key == "Verified" then
     yourscript()
 elseif
-  p3 == Hwid and Key == "Verified" then
+  p4 == Hwid and Key == "Verified" then
     yourscript()
 else
  loadstring(game:HttpGet('https://raw.githubusercontent.com/HubHexScripts/ProjectSlayers/main/Unverified'))()
